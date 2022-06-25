@@ -11,7 +11,7 @@ body {
   box-sizing: border-box;
   width: 40vw;
   height: fit-content;
-  margin: 100px auto 0;
+  margin: 50px auto 0;
   padding: 40px;
   color: #f2f2f2;
   border-radius: 20px;
@@ -96,6 +96,23 @@ body {
 
 #button:active {
   box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.2) inset;
+}
+
+.result {
+  width: fit-content;
+  max-width: 40vw;
+  max-height: 1000px;
+  display: grid;
+  padding: z0px;
+  margin: 30px auto;
+  background-color: #000;
+  color: #fff;
+}
+
+.password {
+  margin: 10px;
+  padding: 15px;
+  outline: solid 1px #fff;
 }
 
 /*# sourceMappingURL=style.css.map */
