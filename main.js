@@ -22,6 +22,50 @@ const handleChange = (min, max, id) => {
     return block.value;
 };
 
+function generatePasswords(useCapitals, useNumbers, useSymbols, count, length) {
+    const charset = [
+        /* smalls: */ "abcdefghijklmnopqrstuvwxyz",
+        /* capitals: */ "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        /* numbers: */ [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+        /* symbols: */ [32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 58, 59, 60, 61, 62, 63, 64, 91, 92, 93, 94, 95, 96, 123, 124, 125, 126]
+    ]
+
+    const allowedSymbols = [ useCapitals, useNumbers, useSymbols ];
+
+    for (let i = 1; i < allowedSymbols.length + 1; i++) {
+        if (!allowedSymbols[i - 1]) {
+            allowedSymbols.splice(i - 1, 1);
+            charset.splice(i, 1);
+            i--;
+        }
+    }
+
+    let passwords = [];
+    const rand = () => Math.round(Math.random() * 10000) + 1;
+
+    for (let i = 0; i < count; i++) {
+        let password = '';
+        for (let j = 0; j < length; j++) {
+
+            const currSet = (rand()) % charset.length;
+            const currPos = (rand()) % charset[currSet].length;
+
+            if (charset[currSet].length === 33) {
+                password += String.fromCharCode(charset[currSet][currPos]);
+            } else {
+                password += charset[currSet][currPos];
+            }
+        }
+        passwords = [...passwords, password];
+    }
+
+    console.log(passwords);
+
+    // console.log(Math.round(Math.random() * 10000) % 4);
+
+    // alert(`${charset[0].length} ${charset[1].length} ${charset[2].length} ${charset[3].length}`)
+}
+
 document.getElementById('capitals').addEventListener('click', e => useCapitals = handleClick(e.target.checked, 'capitals'));
 document.getElementById('numbers').addEventListener('click', e => useNumbers = handleClick(e.target.checked, 'numbers'));
 document.getElementById('symbols').addEventListener('click', e => useSymbols = handleClick(e.target.checked, 'symbols'));
@@ -36,3 +80,5 @@ Symbols: ${useSymbols}
 Count of passwords: ${count}
 Length: ${length}`
 );
+
+document.getElementById('button').onclick = () => generatePasswords(useCapitals, useNumbers, useSymbols, count, length);
