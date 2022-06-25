@@ -1,3 +1,19 @@
+@media screen and (hover: hover) {
+    .checkInput {
+        label:hover {
+            box-shadow: 0 0 15px #000 inset;
+        }
+    }
+
+    .active:hover {
+        box-shadow: 0 0 0 5px #00000080 inset !important;
+    }
+
+    #button:hover {
+        box-shadow: 0 0 0 1000px #0001 inset;
+    }
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -34,8 +50,11 @@ body {
     display: flex;
 
     justify-content: center;
+    flex-wrap: wrap;
 
     label {
+        box-sizing: border-box;
+
         width: fit-content;
         display: flex;
 
@@ -56,17 +75,12 @@ body {
         }
     }
 
-    label:hover {
-        box-shadow: 0 0 15px #000 inset;
-    }
-    
     label:active {
         box-shadow: 0 0 0 5px #00000080 inset;
     }
 }
 
-.active,
-.active:hover {
+.active {
     box-shadow: 0 0 0 5px #00000080 inset !important;
 }
 
@@ -80,7 +94,7 @@ body {
 
     p {
         margin-right: 5px;
-        
+
         font-size: 1.2rem;
     }
 
@@ -114,34 +128,108 @@ body {
     cursor: pointer;
 }
 
-#button:hover {
-    box-shadow: 0 0 0 1000px #0001 inset;
-}
-
 #button:active {
     box-shadow: 0 0 0 1000px #0003 inset;
 }
 
-#root {
-    height: fit-content;
-}
-
 .result {
     width: fit-content;
+    max-width: 40vw;
 
-    display: grid;
+    display: flex;
+
+    justify-content: center;
+    flex-wrap: wrap;
 
     padding: z0px;
     margin: 30px auto;
 
-    background-color: #000;
     color: #fff;
+
+    div {
+        margin: 10px;
+
+        user-select: all;
+        background-color: #000;
+
+        h2 {
+            margin: 5px;
+            padding: 10px;
+
+            outline: dotted 1px #fff;
+        }
+    }
 }
 
-.password {
-    margin: 10px;
-    padding: 15px;
+@media screen and (max-width: 1600px) {
+    .wrapper {
+        width: 50vw;
+    }
 
-    outline: solid 1px #fff;
-    user-select: all;
+    .result {
+        max-width: 50vw;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .wrapper {
+        width: 60vw;
+    }
+
+    .result {
+        max-width: 60vw;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .wrapper {
+        width: 70vw;
+    }
+
+    .result {
+        max-width: 70vw;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .wrapper {
+        width: 80vw;
+    }
+
+    .result {
+        max-width: 80vw;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .wrapper {
+        width: 90vw;
+    }
+
+    .result {
+        max-width: 90vw;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .checkInput {
+        width: 100%;
+    }
+
+    .result {
+        max-width: 50vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .wrapper {
+        width: calc(100vw - 40px);
+        box-sizing: border-box;
+        margin: 10px;
+    }
+
+    .result {
+        box-sizing: border-box;
+        max-width: calc(100vw - 40px);
+    }
 }

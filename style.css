@@ -1,3 +1,16 @@
+@media screen and (hover: hover) {
+  .checkInput label:hover {
+    box-shadow: 0 0 15px #000 inset;
+  }
+
+  .active:hover {
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5019607843) inset !important;
+  }
+
+  #button:hover {
+    box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.0666666667) inset;
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -27,8 +40,10 @@ body {
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .checkInput label {
+  box-sizing: border-box;
   width: fit-content;
   display: flex;
   padding: 10px;
@@ -44,15 +59,11 @@ body {
   display: none;
   border: 1px;
 }
-.checkInput label:hover {
-  box-shadow: 0 0 15px #000 inset;
-}
 .checkInput label:active {
   box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5019607843) inset;
 }
 
-.active,
-.active:hover {
+.active {
   box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5019607843) inset !important;
 }
 
@@ -90,10 +101,6 @@ body {
   cursor: pointer;
 }
 
-#button:hover {
-  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.0666666667) inset;
-}
-
 #button:active {
   box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.2) inset;
 }
@@ -101,19 +108,89 @@ body {
 .result {
   width: fit-content;
   max-width: 40vw;
-  max-height: 1000px;
-  display: grid;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   padding: z0px;
   margin: 30px auto;
-  background-color: #000;
   color: #fff;
 }
-
-.password {
+.result div {
   margin: 10px;
-  padding: 15px;
-  outline: solid 1px #fff;
   user-select: all;
+  background-color: #000;
+}
+.result div h2 {
+  margin: 5px;
+  padding: 10px;
+  outline: dotted 1px #fff;
+}
+
+@media screen and (max-width: 1600px) {
+  .wrapper {
+    width: 50vw;
+  }
+
+  .result {
+    max-width: 50vw;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .wrapper {
+    width: 60vw;
+  }
+
+  .result {
+    max-width: 60vw;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .wrapper {
+    width: 70vw;
+  }
+
+  .result {
+    max-width: 70vw;
+  }
+}
+@media screen and (max-width: 950px) {
+  .wrapper {
+    width: 80vw;
+  }
+
+  .result {
+    max-width: 80vw;
+  }
+}
+@media screen and (max-width: 830px) {
+  .wrapper {
+    width: 90vw;
+  }
+
+  .result {
+    max-width: 90vw;
+  }
+}
+@media screen and (max-width: 730px) {
+  .checkInput {
+    width: 100%;
+  }
+
+  .result {
+    max-width: 50vw;
+  }
+}
+@media screen and (max-width: 500px) {
+  .wrapper {
+    width: calc(100vw - 40px);
+    box-sizing: border-box;
+    margin: 10px;
+  }
+
+  .result {
+    box-sizing: border-box;
+    max-width: calc(100vw - 40px);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
