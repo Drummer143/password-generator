@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script defer src="main.js"></script>
+    <title>Password generator</title>
+</head>
+
+<body>
+    <form class="wrapper">
+        <h1>Password generator</h1>
+
+        <div class="checkInput">
+            <label id="capitals">
+                <input type="checkbox" />
+                Use capital letters
+            </label>
+
+            <label id="numbers">
+                <input type="checkbox" />
+                <p>Use numbers</p>
+            </label>
+
+            <label id="symbols">
+                <input type="checkbox" />
+                <p>Use symbols</p>
+            </label>
+        </div>
+
+        <div class="input">
+            <p>Count of passwords(1-100):</p>
+            <input id="count" value="10" type="number" min="1" max="100" />
+        </div>
+        
+        <div class="input">
+            <p>Password length(1-32):</p>
+            <input id="length" value="8" type="number" min="1" max="100" />
+        </div>
+
+        <button id="button" type="button">Generate</button>
+    </form>
+</body>
+
+
+</html>
