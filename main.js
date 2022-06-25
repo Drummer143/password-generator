@@ -60,8 +60,7 @@ function generatePasswords(useCapitals, useNumbers, useSymbols, count, length) {
         }
 
         const result = document.createElement('div');
-        result.className = 'cell';
-        result.innerHTML = '<h2 class="password"></h2>'
+        result.innerHTML = '<h2></h2>'
         result.childNodes[0].append(password);
 
         div.append(result);

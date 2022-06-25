@@ -214,6 +214,10 @@ body {
 }
 
 @media screen and (max-width: 730px) {
+    h2 {
+        font-size: 1.25rem;
+    }
+
     .checkInput {
         width: 100%;
     }
@@ -224,6 +228,11 @@ body {
 }
 
 @media screen and (max-width: 500px) {
+    h2 {
+        font-size: 1rem;
+        word-wrap: break-word;
+    }
+
     .wrapper {
         width: calc(100vw - 20px);
 
@@ -238,10 +247,6 @@ body {
 }
 
 @media screen and (max-width: 360px) {
-    h2 {
-        font-size: 1.25rem;
-    }
-
     .wrapper {
         padding: 10px;
 
@@ -257,16 +262,25 @@ body {
         border-radius: 5px;
     }
 
-    .input p, p {
+    .input p,
+    p {
         font-size: 1rem;
-    }
-
-    .result {
-        box-sizing: border-box;
-        max-width: calc(100vw - 20px);
     }
 
     #button {
         width: 60%;
+    }
+
+    .result div {
+        margin: 5px;
+
+        border-radius: 5px;
+
+        h2 {
+            margin: 3px;
+            padding: 5px;
+
+            border-radius: 2px;
+        }
     }
 }
