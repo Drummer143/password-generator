@@ -122,10 +122,12 @@ body {
     box-shadow: 0 0 0 1000px #0003 inset;
 }
 
+#root {
+    height: fit-content;
+}
+
 .result {
     width: fit-content;
-    max-width: 40vw;
-    max-height: 1000px;
 
     display: grid;
 

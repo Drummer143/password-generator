@@ -27,7 +27,7 @@ function generatePasswords(useCapitals, useNumbers, useSymbols, count, length) {
         /* smalls: */ "abcdefghijklmnopqrstuvwxyz",
         /* capitals: */ "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
         /* numbers: */[0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-        /* symbols: */[32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 58, 59, 60, 61, 62, 63, 64, 91, 92, 93, 94, 95, 96, 123, 124, 125, 126]
+        /* symbols: */[33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 58, 59, 60, 61, 62, 63, 64, 91, 92, 93, 94, 95, 96, 123, 124, 125, 126]
     ]
 
     const allowedSymbols = [useCapitals, useNumbers, useSymbols];
@@ -55,14 +55,19 @@ function generatePasswords(useCapitals, useNumbers, useSymbols, count, length) {
             const currSet = (rand()) % charset.length;
             const currPos = (rand()) % charset[currSet].length;
 
-            if (charset[currSet].length === 33) {
+            if (charset[currSet].length === 32) {
                 password += String.fromCharCode(charset[currSet][currPos]);
             } else {
                 password += charset[currSet][currPos];
             }
         }
 
-        div.innerHTML += `<h2 class='password'>${password}</h2>`;
+        const result = document.createElement('h2');
+        result.className = 'password';
+        result.append(password);
+        console.log(result);
+
+        div.append(result);
     }
 
     console.log(div);
