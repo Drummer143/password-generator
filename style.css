@@ -119,11 +119,13 @@ body {
   margin: 10px;
   user-select: all;
   background-color: #000;
+  border-radius: 10px;
 }
 .result div h2 {
   margin: 5px;
   padding: 10px;
   outline: dotted 1px #fff;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 1600px) {
@@ -203,6 +205,11 @@ body {
   .wrapper h1 {
     margin-bottom: 5px;
     font-size: 1.5rem;
+  }
+
+  .checkInput label {
+    padding: 5px;
+    border-radius: 5px;
   }
 
   .input p, p {

@@ -151,12 +151,14 @@ body {
 
         user-select: all;
         background-color: #000;
+        border-radius: 10px;
 
         h2 {
             margin: 5px;
             padding: 10px;
 
             outline: dotted 1px #fff;
+            border-radius: 5px;
         }
     }
 }
@@ -247,6 +249,12 @@ body {
             margin-bottom: 5px;
             font-size: 1.5rem;
         }
+    }
+
+    .checkInput label {
+        padding: 5px;
+
+        border-radius: 5px;
     }
 
     .input p, p {
